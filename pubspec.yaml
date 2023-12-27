@@ -1,0 +1,68 @@
+name: iq_test
+description: A new Flutter project.
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_svg: ^2.0.9
+
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.2.1
+  font_awesome_flutter: ^10.5.0
+  google_fonts: ^5.1.0
+  go_router: ^12.1.1
+  flutter_bloc: ^8.1.3
+  get_it: ^7.6.4
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/start.png
+    - assets/images/
+    - assets/images/Questions/1/
+    - assets/images/Questions/2/
+    - assets/images/Questions/3/
+    - assets/images/Questions/4/
+    - assets/images/Questions/5/
+    - assets/images/Questions/6/
+    - assets/images/Questions/7/
+    - assets/images/Questions/8/
+    - assets/images/Questions/9/
+    - assets/images/Questions/10/
+    - assets/images/Questions/11/
+    - assets/images/Questions/12/
+    - assets/images/Questions/13/
+    - assets/images/Questions/14/
+    - assets/images/Questions/15/
+    - assets/images/Questions/16/
+    - assets/images/Questions/17/
+    - assets/images/Questions/18/
+    - assets/images/Questions/19/
+    - assets/images/Questions/20/
+flutter_intl:
+    enabled: true
+    class_name: L10n
+    output_dir: lib/common/localization/generated
+    arb_dir: lib/common/localization/l10n
