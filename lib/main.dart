@@ -5,7 +5,6 @@ import 'package:iq_test/common/theme/color_constants.dart';
 import 'package:iq_test/common/widgets/border_radius_constants.dart';
 import 'package:iq_test/common/widgets/underline_input_border_resolver.dart';
 import 'package:iq_test/features/home/page/home_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(Application());
@@ -38,31 +37,15 @@ class _ApplicationState extends State<Application> {
       ],
       // if the language is not specified, the device will select the language that is on the device
       locale: const Locale('en'),
-     // locale: const Locale('uk'),
+      // locale: const Locale('uk'),
       supportedLocales: L10n.delegate.supportedLocales,
       theme: isDarkMode ? MyThemes.lightTheme : MyThemes.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: FutureBuilder<bool>(
-        future: _checkInstalltionStatus(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator();
-          } else if (snapshot.hasData && snapshot.data == true) {
-            return HomePage(
-              toggleTheme: toggleTheme,
-              checkDarkMode: isDarkMode,
-            );
-          } else {
-            return Container();
-          }
-        },
+      home: HomePage(
+        toggleTheme: toggleTheme,
+        checkDarkMode: isDarkMode,
       ),
     );
-  }
-
-  Future<bool> _checkInstalltionStatus() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('isInstalled') ?? false;
   }
 }
 
